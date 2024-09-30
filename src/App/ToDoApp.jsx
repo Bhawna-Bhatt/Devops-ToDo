@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Modal} from "react-responsive-modal";
+import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import "./ToDoApp.css";
 import "./responsive_style.css";
@@ -120,32 +120,37 @@ class ToDoListApp extends Component {
     });
     return (
       <>
-      <div className="ToDoListApp">
-        <header>
-          {" "}
-          <button>
-            <i className="fas fa-search"></i>
-          </button>{" "}
-          <h1>All Tasks</h1>{" "}
-          <button className="sync-btn" onClick={this.HandleClear}>
-            <i className="fas fa-sync-alt"></i>
-          </button>{" "}
-        </header>
-        <ul>{response}</ul>
-        <footer>
-          <input
-            type="text"
-            name="ToDoPrimary"
-            placeholder="Enter Todo"
-            onChange={this.HandleChange}
-            value={this.state.ToDoPrimary}
-          />
-          <button onClick={this.HandleClick}>
-            <i className="fas fa-plus-circle"></i>
-          </button>
-        </footer>
-      </div>
-        <Modal open={this.state.open} onClose={this.HandleClose} classNames={{ modal: 'customModal', overlay: 'customOverlay',}} center>
+        <div className="ToDoListApp">
+          <header>
+            {" "}
+            <button>
+              <i className="fas fa-search"></i>
+            </button>{" "}
+            <h1>All Tasks</h1>{" "}
+            <button className="sync-btn" onClick={this.HandleClear}>
+              <i className="fas fa-sync-alt"></i>
+            </button>{" "}
+          </header>
+          <ul>{response}</ul>
+          <footer>
+            <input
+              type="text"
+              name="ToDoPrimary"
+              placeholder="Enter Todo"
+              onChange={this.HandleChange}
+              value={this.state.ToDoPrimary}
+            />
+            <button onClick={this.HandleClick} aria-label="Add todo">
+              <i className="fas fa-plus-circle"></i>
+            </button>
+          </footer>
+        </div>
+        <Modal
+          open={this.state.open}
+          onClose={this.HandleClose}
+          classNames={{ modal: "customModal", overlay: "customOverlay" }}
+          center
+        >
           <input
             type="text"
             name="ToDoSecondary"
